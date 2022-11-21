@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function initialize()
+    {
+        pennyAmount = document.getElementById("num1");
+        nickelAmount = document.getElementById("num2");
+        dimeAmount = document.getElementById("num3");
+        quarterAmount = document.getElementById("num4");
+        totalAmount = document.getElementById("total");
+        initial1 = 0;
+        initial2 = 0;
+        initial3 = 0;
+        initial4 = 0;
+        initial5 = 0;
+        display();
+    }
+    
+    function addPenny()
+    {
+        initial1++;
+        display();
+    }
+
+    function subtractPenny()
+    {
+        if (initial1 > 0)
+        {
+            initial1--;
+        }
+        display();
+    }
+
+    function addNickel()
+    {
+        initial2++;
+        display();
+    }
+
+    function subtractNickel()
+    {
+        if (initial2 > 0)
+        {
+            initial2--;
+        }
+        display();
+    }
+
+    function addDime()
+    {
+        initial3++;
+        display();
+    }
+
+    function subtractDime()
+    {
+        if (initial3 > 0)
+        {
+            initial3--;
+        }
+        display();
+    }
+
+    function addQuarter()
+    {
+        initial4++;
+        display();
+    }
+
+    function subtractQuarter()
+    {
+        if (initial4 > 0)
+        {
+            initial4--;
+        }
+        display();
+    }
+
+    function calculate()
+    {
+        initial5 = (initial1 * 0.01) + (initial2 * 0.05) + (initial3 * 0.1) + (initial4 * 0.25);
+        initial5 = parseFloat(initial5).toFixed(2);
+    }
+
+    function display()
+    {
+        pennyAmount.innerHTML = initial1;
+        nickelAmount.innerHTML = initial2;
+        dimeAmount.innerHTML = initial3;
+        quarterAmount.innerHTML = initial4;
+        calculate();
+        totalAmount.innerHTML = initial5;
+    }
+</script>
+<body onload="initialize();">
+    <h1># of Pennies:</h1>
+    <h1 id ="num1"></h1>
+    <button onclick="addPenny()">Add Penny</button>
+    <button onclick="subtractPenny()">Subtact Penny</button>
+    <h1># of Nickels:</h1>
+    <h1 id ="num2"></h1>
+    <button onclick="addNickel()">Add Nickel</button>
+    <button onclick="subtractNickel()">Subtact Nickel</button>
+    <h1># of Dimes:</h1>
+    <h1 id ="num3"></h1>
+    <button onclick="addDime()">Add Dime</button>
+    <button onclick="subtractDime()">Subtact Dime</button>
+    <h1># of Quarters:</h1>
+    <h1 id ="num4"></h1>
+    <button onclick="addQuarter()">Add Quarter</button>
+    <button onclick="subtractQuarter()">Subtact Quarter</button>
+    <h1>Total Amount:</h1>
+    <h1 id = "total"></h1>
+</body>
+</html>
